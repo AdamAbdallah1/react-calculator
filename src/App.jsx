@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import backArrowIcon from './assets/back-arrow-icon.png'
 
 function App() {
   const [input, setInput] = useState('');
@@ -23,6 +24,10 @@ function App() {
     }
   };
 
+  const handleBackSpace = () => {
+    setInput(input.slice(0, -1));
+  }
+
   return (
     <main className="container m-auto items-center justify-center flex gap-5 p-5">
       <div className="flex w-2xs flex-col gap-5 rounded-4xl bg-blue-200 p-4">
@@ -39,7 +44,7 @@ function App() {
           <button onClick={() => handleClick('9')} value={9} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">9</button>
           <button onClick={handleClear} value={"AC"} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">AC</button>
           <button onClick={() => handleClick('0')}  value={0} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">0</button>
-          <button value={"."} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">.</button>
+          <button onClick={handleBackSpace} value={"."} className="flex justify-center text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400"><img className='w-8' src={backArrowIcon} alt="" /></button>
           <button onClick={handleCalculate} value={"="} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] ml-23 py-4 text-white hover:bg-[#4B0082]">=</button>
         </div>
       </div>
