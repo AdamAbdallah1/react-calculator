@@ -51,7 +51,7 @@ function App() {
   return (
     <main className="container m-auto items-center justify-center flex gap-5 p-5">
       <div className="flex w-2xs flex-col gap-5 rounded-4xl bg-blue-200 p-4">
-        <div className="rounded bg-[#4B0082] text-white p-3 shadow-cyan-200">{input || 0}</div>
+        <div className="rounded-2xl bg-[#4B0082] text-white p-3 shadow-cyan-200">{input || 0}</div>
         <div className="grid grid-cols-3 justify-center gap-2">
           <button onClick={() => handleClick('1')} value={1} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">1</button>
           <button onClick={() => handleClick('2')} value={2} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">2</button>
