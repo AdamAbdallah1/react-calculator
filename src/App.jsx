@@ -8,6 +8,15 @@ function App() {
   const [input, setInput] = useState('');
 
   const handleClick = (value) => {
+    const lastChar = input.slice(-1);
+    const operatos = ['+', '-', '/', '*'];
+
+    if (operatos.includes(value)){
+      if (operatos.includes(lastChar)) {
+        setInput(input.slice(0, -1) + value);
+        return;
+      }
+    }
     setInput(input + value);
   };
 
