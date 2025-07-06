@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Display from './components/Display';
 import Button from './components/Button';
 import backArrowIcon from './assets/back-arrow-icon.png';
+import NavButton from './components/NavButton';
 
 function App() {
   const [input, setInput] = useState('');
@@ -73,11 +74,11 @@ function App() {
 
       <div className="w-fit bg-blue-200 rounded-4xl p-4 flex flex-col gap-5 items-end">
         {['+','-','/','x'].map((op) => (
-          <Button
+          <NavButton
             key={op}
             value={op}
             onClick={() => handleClick(op === 'x' ? '*' : op)}
-            className="w-18 bg-[#4B0082] hover:bg-[#9500ff]"
+            className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff"
           />
         ))}
       </div>
