@@ -1,4 +1,4 @@
-function NavButton({ key, value, onClick, className, children }) {
+function NavButton({ value, onClick, className, children }) {
     return (
         <button
       onClick={onClick}
