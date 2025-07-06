@@ -17,7 +17,7 @@ function App() {
   const handleCalculate = () => {
     try {
       const result = eval(input.replace(/x/g, '*'));
-      setInput(result.toSring());
+      setInput(result.toString());
     } catch (error) {
       setInput('Error');
     }
@@ -25,30 +25,30 @@ function App() {
 
   return (
     <main className="container m-auto items-center justify-center flex gap-5 p-5">
-      <div class="flex w-2xs flex-col gap-5 rounded-4xl bg-blue-200 p-4">
-        <div class="rounded bg-[#4B0082] text-white p-3 shadow-cyan-200">{input || 0}</div>
-        <div class="grid grid-cols-3 justify-center gap-2">
-          <button value={1} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">1</button>
-          <button value={2} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">2</button>
-          <button value={3} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">3</button>
-          <button value={4} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">4</button>
-          <button value={5} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">5</button>
-          <button value={6} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">6</button>
-          <button value={7} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">7</button>
-          <button value={8} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">8</button>
-          <button value={9} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">9</button>
-          <button value={AC} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">AC</button>
-          <button value={0} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">0</button>
-          <button value={"."} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">.</button>
-          <button value={"="} class="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] ml-23 py-4 text-white hover:bg-[#4B0082]">=</button>
+      <div className="flex w-2xs flex-col gap-5 rounded-4xl bg-blue-200 p-4">
+        <div className="rounded bg-[#4B0082] text-white p-3 shadow-cyan-200">{input || 0}</div>
+        <div className="grid grid-cols-3 justify-center gap-2">
+          <button onClick={() => handleClick('1')} value={1} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">1</button>
+          <button onClick={() => handleClick('2')} value={2} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">2</button>
+          <button onClick={() => handleClick('3')} value={3} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">3</button>
+          <button onClick={() => handleClick('4')} value={4} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">4</button>
+          <button onClick={() => handleClick('5')} value={5} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">5</button>
+          <button onClick={() => handleClick('6')} value={6} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">6</button>
+          <button onClick={() => handleClick('7')} value={7} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">7</button>
+          <button onClick={() => handleClick('8')} value={8} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">8</button>
+          <button onClick={() => handleClick('9')} value={9} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">9</button>
+          <button onClick={handleClear} value={"AC"} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">AC</button>
+          <button onClick={() => handleClick('0')}  value={0} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#9500ff] py-4 text-white hover:bg-blue-400">0</button>
+          <button value={"."} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-blue-400">.</button>
+          <button onClick={handleCalculate} value={"="} className="text-2xl w-full cursor-pointer rounded-4xl bg-[#4B0082] ml-23 py-4 text-white hover:bg-[#4B0082]">=</button>
         </div>
       </div>
       <div>
-      <div class="w-fit bg-blue-200 rounded-4xl p-4 flex flex-col gap-5 items-end">
-        <button class="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">+</button>
-        <button class="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">-</button>
-        <button class="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">/</button>
-        <button class="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">x</button>
+      <div className="w-fit bg-blue-200 rounded-4xl p-4 flex flex-col gap-5 items-end">
+        <button onClick={() => handleClick('+')} className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">+</button>
+        <button onClick={() => handleClick('-')} className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">-</button>
+        <button onClick={() => handleClick('/')} className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">/</button>
+        <button onClick={() => handleClick('*')} className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff]">x</button>
         </div>
       </div>
     </main>
