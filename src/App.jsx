@@ -78,7 +78,7 @@ function App() {
             key={op}
             value={op}
             onClick={() => handleClick(op === 'x' ? '*' : op)}
-            className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#9500ff"
+            className="w-18 cursor-pointer rounded-4xl bg-[#4B0082] py-4 text-white hover:bg-[#b680dd]"
           />
         ))}
       </div>
