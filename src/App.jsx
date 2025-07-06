@@ -17,7 +17,7 @@ function App() {
         return;
       }
     }
-    setInput(input + value);
+    setInput(input + value)
   };
 
   const handleClear = (value) => {
@@ -25,8 +25,19 @@ function App() {
   }
 
   const handleCalculate = () => {
+    if (input === '') return;
+
+    const operators = ['+', '-', '/', '*'];
+    let expression = input;
+
+    const lastChar = expression.slice(-1);
+
+    if (operators.includes(lastChar)) {
+      expression = expression.slice(0, -1);
+    }
+
     try {
-      const result = eval(input.replace(/x/g, '*'));
+      const result = eval(expression.replace(/x/g, '*'));
       setInput(result.toString());
     } catch (error) {
       setInput('Error');
