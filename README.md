@@ -10,7 +10,7 @@ A simple calculator built with React and Tailwind CSS.
 
 ## Demo
 
-[Live Demo]
+[Live Demo] https://adamabdallah1.github.io/react-calculator/
 
 ## Setup
 
