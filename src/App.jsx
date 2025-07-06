@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <main className="container m-auto flex items-center justify-center gap-5 p-5">
+    <main className="container m-auto flex flex-col md:flex-row items-center justify-center gap-5 p-5">
       <div className="flex w-2xs flex-col gap-5 rounded-4xl bg-blue-200 p-4">
         <Display value={input} />
 
@@ -72,7 +72,7 @@ function App() {
         </div>
       </div>
 
-      <div className="w-fit bg-blue-200 rounded-4xl p-4 flex flex-col gap-5 items-end">
+      <div className="w-fit md:w-fit flex flex-row md:flex-col flex-wrap gap-2 md:gap-5 bg-blue-200 rounded-4xl p-4 items-center md:items-end justify-center">
         {['+','-','/','x'].map((op) => (
           <NavButton
             key={op}
